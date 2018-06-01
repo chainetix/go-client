@@ -1,0 +1,18 @@
+package chainetix
+
+func (client *Client) IssueCurrency(currency string, quantity float64, recipientAddress string) (map[string]interface{}, error) {
+	dest := map[string]interface{}{}
+	src := map[string]interface{}{
+		"quantity": quantity,
+		"recipientAddress": recipientAddress,
+	}
+	_, err := client.Post(
+		"https://multichain.blokhub.io/api/currency/" + currency + "/issue",
+		src,
+		&dest,
+	)
+	if err != nil {
+		return nil, err
+	}
+	return dest, nil
+}
