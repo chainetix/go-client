@@ -10,6 +10,7 @@ func (client *Client) IssueCurrency(currency string, quantity float64, recipient
 		"https://multichain.blokhub.io/api/currency/" + currency + "/issue",
 		src,
 		&dest,
+		client.headers,
 	)
 	if err != nil {
 		return nil, err

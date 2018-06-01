@@ -5,6 +5,7 @@ func (client *Client) Users() ([]interface{}, error) {
 	_, err := client.Get(
 		"https://multichain.blokhub.io/api/users",
 		&dest,
+		client.headers,
 	)
 	if err != nil {
 		return nil, err

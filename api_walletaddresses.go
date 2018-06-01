@@ -5,6 +5,7 @@ func (client *Client) WalletAddresses(wallet string) ([]interface{}, error) {
 	_, err := client.Get(
 		"https://multichain.blokhub.io/api/wallet/" + wallet + "/addresses",
 		&dest,
+		client.headers,
 	)
 	if err != nil {
 		return nil, err

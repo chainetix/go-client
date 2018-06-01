@@ -5,6 +5,7 @@ func (client *Client) IssuedAssets(currency string) ([]interface{}, error) {
 	_, err := client.Get(
 		"https://multichain.blokhub.io/api/currency/" + currency + "/assets",
 		&dest,
+		client.headers,
 	)
 	if err != nil {
 		return nil, err

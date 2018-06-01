@@ -10,6 +10,7 @@ func (client *Client) NewAddress(secret string, wallet string) (map[string]inter
 		"https://multichain.blokhub.io/api/address",
 		src,
 		&dest,
+		client.headers,
 	)
 	if err != nil {
 		return nil, err

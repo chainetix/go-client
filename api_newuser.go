@@ -9,6 +9,7 @@ func (client *Client) NewUser(label string) (map[string]interface{}, error) {
 		"https://multichain.blokhub.io/api/agent",
 		src,
 		&dest,
+		client.headers,
 	)
 	if err != nil {
 		return nil, err

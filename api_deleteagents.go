@@ -7,6 +7,7 @@ func (client *Client) DeleteAgents() error {
 		"https://multichain.blokhub.io/api/agents",
 		src,
 		nil,
+		client.headers,
 	)
 	if err != nil {
 		return err

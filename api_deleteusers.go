@@ -7,6 +7,7 @@ func (client *Client) DeleteUsers() error {
 		"https://multichain.blokhub.io/api/users",
 		src,
 		nil,
+		client.headers,
 	)
 	if err != nil {
 		return err

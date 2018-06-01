@@ -10,6 +10,7 @@ func (client *Client) NewStream(name string, secret string) (map[string]interfac
 		"https://multichain.blokhub.io/api/stream",
 		src,
 		&dest,
+		client.headers,
 	)
 	if err != nil {
 		return nil, err

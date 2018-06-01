@@ -5,6 +5,7 @@ func (client *Client) Currencies() ([]interface{}, error) {
 	_, err := client.Get(
 		"https://multichain.blokhub.io/api/currencies",
 		&dest,
+		client.headers,
 	)
 	if err != nil {
 		return nil, err

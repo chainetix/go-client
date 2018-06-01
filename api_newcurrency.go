@@ -10,6 +10,7 @@ func (client *Client) NewCurrency(name string, units float64) (map[string]interf
 		"https://multichain.blokhub.io/api/currency",
 		src,
 		&dest,
+		client.headers,
 	)
 	if err != nil {
 		return nil, err

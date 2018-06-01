@@ -5,6 +5,7 @@ func (client *Client) Agents() ([]interface{}, error) {
 	_, err := client.Get(
 		"https://multichain.blokhub.io/api/agents",
 		&dest,
+		client.headers,
 	)
 	if err != nil {
 		return nil, err

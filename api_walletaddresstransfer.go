@@ -12,6 +12,7 @@ func (client *Client) WalletAddressTransfer(address string, assetQuantity float6
 		"https://multichain.blokhub.io/api/address/" + address + "/transfer",
 		src,
 		&dest,
+		client.headers,
 	)
 	if err != nil {
 		return nil, err
