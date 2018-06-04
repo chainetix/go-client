@@ -1,12 +1,12 @@
 package chainetix
 
-func (client *Client) NewUser(label string) (map[string]interface{}, error) {
+func (client *Client) NewUser(groups []interface {}) (map[string]interface{}, error) {
 	dest := map[string]interface{}{}
 	src := map[string]interface{}{
-		"label": label,
+		"groups": groups,
 	}
 	_, err := client.Post(
-		"https://multichain.blokhub.io/api/agent",
+		"https://multichain.blokhub.io/api/user",
 		src,
 		&dest,
 		client.headers,
